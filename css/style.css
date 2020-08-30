@@ -1,0 +1,32 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1270px;
+    /* height: 100%; */
+    margin: 0 auto;
+}
+
+#btn{
+    margin-top: 20px;
+    border-radius: 20px;
+    padding: 10px 20px;
+    outline: none;
+    border: 1px solid black;
+    background-color: rgb(43, 44, 116);
+    text-transform: uppercase;
+}
+
+#btn:hover{
+    background-color: rgb(77, 79, 219);
+}
+
+#btn:active{
+    text-transform: lowercase;
+}
