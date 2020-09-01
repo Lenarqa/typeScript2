@@ -48,3 +48,57 @@ function getObjValue<T extends object, R extends keyof T>(obj: T, key: R){
 
 console.log(getObjValue(person, 'name'));
 console.log(getObjValue(person, 'age'));
+
+//====================
+class Collection<T extends number | string | boolean>{
+    constructor(private _items: T[] = []){}
+
+    add(item: T) {
+        this._items.push(item);
+    }
+
+    remove(item: T) {
+        this._items = this._items.filter( i => i !== item);
+    }
+
+    get items(): T[] { 
+        return this._items;
+    }
+}
+
+const strings = new Collection(['I', 'am', 'strings']);
+strings.add('Hello');
+strings.remove('strings');
+console.log(strings.items); 
+
+//========================
+interface Car {
+    model: string;
+    age: number;
+}
+
+function createAndValidateCar(model: string, age: number) {
+    const car: Partial<Car> = {};
+
+    if(model.length > 3) {
+        car.model = model;
+    }
+
+    if(age > 2000) {
+        car.age = age;
+    }
+
+    return car as Car;
+}
+
+// ===============
+const cars: Readonly<Array<string>> = ['Ford', 'Audi'];
+// cars.shift(); //ошибка потому что cars readonly
+cars[1];
+
+const ford: Readonly<Car> = {
+    model: 'Ford',
+    age: 2011
+}
+
+// ford.model = 'hello';//error 

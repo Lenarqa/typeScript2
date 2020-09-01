@@ -27,7 +27,7 @@ console.log(withCount("Hello world"));
 console.log(withCount([1, 2, 3]));
 // console.log(withCount(10));//error number no has length
 const person = {
-    name: 'Vladilen',
+    name: 'Lenarqa',
     age: 23
 };
 function getObjValue(obj, key) {
@@ -35,3 +35,22 @@ function getObjValue(obj, key) {
 }
 console.log(getObjValue(person, 'name'));
 console.log(getObjValue(person, 'age'));
+//====================
+class Collection {
+    constructor(_items = []) {
+        this._items = _items;
+    }
+    add(item) {
+        this._items.push(item);
+    }
+    remove(item) {
+        this._items = this._items.filter(i => i !== item);
+    }
+    get items() {
+        return this._items;
+    }
+}
+const strings = new Collection(['I', 'am', 'strings']);
+strings.add('Hello');
+strings.remove('strings');
+console.log(strings.items);
