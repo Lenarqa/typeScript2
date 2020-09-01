@@ -51,6 +51,25 @@ class Collection {
     }
 }
 const strings = new Collection(['I', 'am', 'strings']);
-strings.add('Hello');
+// strings.add('Hello');
 strings.remove('strings');
 console.log(strings.items);
+function createAndValidateCar(model, age) {
+    const car = {};
+    if (model.length > 3) {
+        car.model = model;
+    }
+    if (age > 2000) {
+        car.age = age;
+    }
+    return car;
+}
+// ===============
+const cars = ['Ford', 'Audi'];
+// cars.shift(); //ошибка потому что cars readonly
+cars[1];
+const ford = {
+    model: 'Ford',
+    age: 2011
+};
+// ford.model = 'hello';//error 

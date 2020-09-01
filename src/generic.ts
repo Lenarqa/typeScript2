@@ -67,7 +67,7 @@ class Collection<T extends number | string | boolean>{
 }
 
 const strings = new Collection(['I', 'am', 'strings']);
-strings.add('Hello');
+// strings.add('Hello');
 strings.remove('strings');
 console.log(strings.items); 
 
